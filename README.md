@@ -36,3 +36,10 @@ Get-ChildItem –Path "C:\path\to\folder"-Recurse | Where-Object {($_.LastWriteT
         [<CommonParameters>]
  ```
 ### Example
+```powershell
+| Remove-Item -include .PDF
+ ```
+ Nun werden nur .PDF Dateien entfernt.
+ ```powershell
+ |Remove-Item -Confirm
+  ```
