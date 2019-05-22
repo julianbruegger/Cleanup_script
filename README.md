@@ -1,4 +1,4 @@
-# Cleanup_shell
+# Cleanup_script
 Ein Powershellscript für die ICT-BZ welches dateien welche Älter als 30 Tage sind, löscht.
 
 ## Anwendung
