@@ -50,9 +50,18 @@ Get-ChildItem –Path "C:\path\to\folder"-Recurse | Where-Object {($_.LastWriteT
  ```
  Nun werden nur .PDF Dateien entfernt. 
 
+ ##Child-Item
+ ```powershell
+ | Get-ChildItem -Path C:\Users\Julian\Donload -Recurse
+    options: 
+    Get-ChildItem
+        [-Path] Sucht im nachfolgenden Pfad
+        [-Recurse] Durchsucht auch unterordner. 
+  ```
+
 #Backup davon erstellen
 ````powershell
-Copy-Item 'G:\scanner\*' 'C:\backup\pfad\Backup'
+| Copy-Item 'G:\scanner\*' 'C:\backup\pfad\Backup'
 ```
 
 Mit diesem Befehl wird ein backup des Ordners in ein Wunschverzeichnis erstellt. 
