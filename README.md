@@ -1,21 +1,24 @@
-# Cleanup_script
+# Cleanup_script 
 Ein Powershellscript für die ICT-BZ welches dateien welche Älter als 30 Tage sind, löscht.
-Reference-style: 
+
+
 ![alt text][logo]
 
 [logo]: https://www.ict-bz.ch/themes/ict-bz/assets/ICT-BZ_Logo_Google.png "ICT-BZ"
 
 
 ## Anwendung
-Das script soll dateien im scanner ordner löschen. 
+Das script soll dateien im scanner Ordner löschen welche älter als 30 Tage alt sind. 
 
 Pfad: ```G:\scanner```
 
 ## Script
+
 ```powershell
 Get-ChildItem –Path "C:\path\to\folder"-Recurse | Where-Object {($_.LastWriteTime -lt (Get-Date).AddDays(-30))} | Remove-Item 
 ```
 ### Pfad anpassen
+
 ```powershell
 -Path "C:\your\path"
 ```
@@ -47,3 +50,9 @@ Get-ChildItem –Path "C:\path\to\folder"-Recurse | Where-Object {($_.LastWriteT
  ```
  Nun werden nur .PDF Dateien entfernt. 
 
+#Backup davon erstellen
+````powershell
+Copy-Item 'G:\scanner\*' 'C:\backup\pfad\Backup'
+```
+
+Mit diesem Befehl wird ein backup des Ordners in ein Wunschverzeichnis erstellt. 
