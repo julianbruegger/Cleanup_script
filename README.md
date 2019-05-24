@@ -23,12 +23,14 @@ Get-ChildItem –Path "C:\path\to\folder"-Recurse | Where-Object {($_.LastWriteT
 -Path "C:\your\path"
 ```
 ### In wievielen Tagen
-Vom heutigen da
+Vom heutigen Datum -30 Tage.
 ```powershell
 (Get-Date).AddDays(-30)
 ```
 
 ### Was Passiert
+Mit ```| Remove-Item ``` werden Dateien gelöscht. 
+Zusätzlich konnen nöch Filter dazu angewendet werden. 
 ```powershell
 | Remove-Item
     options: 
@@ -51,7 +53,8 @@ Vom heutigen da
  ```
  Nun werden nur .PDF Dateien entfernt. 
 
- ##Child-Item
+ ## Child-Item
+ Zeigt alle dateien im angegebenen Verzeichnis an. 
  ```powershell
  | Get-ChildItem -Path C:\Users\Julian\Donload -Recurse
     options: 
@@ -60,10 +63,9 @@ Vom heutigen da
         [-Recurse] Durchsucht auch unterordner. 
   ```
 
-#Backup davon erstellen
+# Backup davon erstellen
 ```powershell
 | Copy-Item 'G:\scanner\*' 'C:\backup\pfad\Backup'
-
 ```
 
 Mit diesem Befehl wird ein backup des Ordners in ein Wunschverzeichnis erstellt. 
